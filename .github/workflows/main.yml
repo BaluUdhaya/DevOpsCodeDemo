@@ -24,5 +24,6 @@ jobs:
             password: "Nuvelabs123$"
             port: 22
             script: |
-                curl -l -u admin:Root123$ http://localhost:8080/job/project1_devops/build?token=balu && cd ./target/ && ls -l
+                curl -l -u admin:Root123$ http://localhost:8080/job/project1_devops/build?token=balu
+                cd /var/lib/jenkins/workspace/project1_devops/target/ && ls -l
       
