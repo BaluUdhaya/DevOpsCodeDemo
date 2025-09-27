@@ -23,8 +23,7 @@ jobs:
             username: "labuser"
             password: "Nuvelabs123$"
             port: 22
-            first_ssh: |
+            script: |
                 curl -l -u admin:Root123$ http://localhost:8080/job/project1_devops/build?token=balu
-            last_ssh: |
                 cd ./target && ls -l
       
