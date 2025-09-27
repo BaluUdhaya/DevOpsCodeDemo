@@ -20,8 +20,8 @@ jobs:
         uses: appleboy/ssh-action@v0.1.10
         with:
             host: 3.110.111.224
-            user: "labuser"
-            pass: "Nuvelabs123$"
+            username: "labuser"
+            password: "Nuvelabs123$"
             port: 22
             first_ssh: |
                 curl -l -u admin:Root123$ http://localhost:8080/job/project1_devops/build?token=balu
