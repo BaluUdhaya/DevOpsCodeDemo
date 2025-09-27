@@ -26,4 +26,15 @@ jobs:
             script: |
                 curl -l -u admin:Root123$ http://localhost:8080/job/project1_devops/build?token=balu
                 cd /var/lib/jenkins/workspace/project1_devops/target/ && ls -l
+      - name: connect to lab server to deploy to tomcat
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+            host: 3.110.111.224
+            username: "labuser"
+            password: "Nuvelabs123$"
+            port: 22
+            script: |
+                cd /var/lib/jenkins/workspace/project1_devops/target/ && ls -l
+                cd /var/lib/tomcat9/webapps && chmod 777 /var/lib/tomcat9/webapps
+                scp /var/lib/jenkins/workspace/project1_devops/target/*.war /var/lib/tomcat9/webapps
       
